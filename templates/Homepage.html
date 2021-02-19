@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   
+    <title>Care4U</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .form-actions {
+            margin: 0;
+            background-color: transparent;
+            text-align: center;
+        }
+        
+        .mobileContent {
+            display: none;
+        }
+        
+        @media only screen and (min-device-width:320px) and (max-device-width:480px) {
+            .mobileContent {
+                display: inline;
+            }
+            .table-responsive {
+                display: none;
+            }
+        }
+
+        body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background: linear-gradient(-45deg, #3db3c5, #274685);
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  p{
+    font-family: Montserrat, sans-serif;
+    color: #303030;
+    font-size: 16px;
+  }
+  h1{
+  color: #fff;
+  }
+  h3{
+    color: #fff;
+
+  }
+
+
+  
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    background: linear-gradient(-45deg, #3db3c5, #274685);
+    font-size: 50px;
+  }
+  .logo {
+    background: linear-gradient(-45deg, #3db3c5, #274685);
+    font-size: 200px;
+  }
+  
+  
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+ 
+ .motive{
+  background: linear-gradient(-45deg, #3db3c5, #274685);
+
+ }
+ 
+  .navbar {
+    margin-bottom: 0;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+    background: linear-gradient(-45deg, #3db3c5, #274685);
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    background: linear-gradient(-45deg, #3db3c5, #274685);
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(-45deg, #3db3c5, #274685);
+  }
+  .slideanim {visibility:visible;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  
+  
+    </style>
+    
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="{{ url_for('Homepage') }}">Home</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#services">SERVICES</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="jumbotron text-center">
+        <h1>Care 4 U</h1> 
+        <h3>Self-care is how you take your power back</h3> 
+      
+      </div>
+      
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>About Us</h2><br>
+        <p>We have developed this website to predict the disease in the patients body by 
+          various parameteric values.The disease will be predicted   
+          and the stage of affection of the particular diseases will be analyzed and its types 
+          by its symptoms and personally  assisting the person based on the type of disease 
+          which has precautions, prevention, daily caring of the patients etc., A bot has 
+          been implemented to answer up the queries of the patients and guide them 
+          accordingly. A remainder system has been done to remain the patients 
+          about the intake of medicines by mentioning what medicine and for what purpose.</p>
+                    
+      </div>
+      <div class="col-sm-4">
+        <img src="/static/JOB-1.gif" class="card-img-top rounded mx-auto d-block my-4" alt="#" style="width: 500px; height:500px;">
+      </div>
+    </div>
+  </div>
+  <div class="motive">
+  <div class="container-fluid bg-white" >
+    <div class="row">
+     
+        <center><h1>Our Motive</h1></center><br>
+<h3>
+          To make people monitor their health conditions in home and alert them via messages by checking the precautions and take up medicines or some daily 
+          activities to get rid of that diseases in which it act as a self monitor and selfcare.
+</h3>     
+    
+    </div>
+  </div>
+  </div>
+
+  <!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+    <h2>SERVICES</h2>
+    <h4>What we offer</h4>
+    <br>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <img src="/static/download (1).jpg" class="card-img-top rounded mx-auto d-block my-4" alt="#" style="width: 100px; height:100px;">
+        <h4>Chronic Kidney Disease</h4>
+        <p> <div class="form-actions">
+            <a href="{{ url_for('CKD') }}"><button type="submit" class="btn btn-primary"
+                    type="submit">Detect
+                    Now</button></a>
+        </div></p>
+      </div>
+      <div class="col-sm-4">
+        <img src="/static/HeartPulse.png" class="card-img-top rounded mx-auto d-block my-4" alt="#" style="width: 100px; height:100px;">
+        <h4>Heart Disease Detection</h4>
+        <p><div class="form-actions">
+            <a href="{{ url_for('Heart_disease') }}"><button type="submit"
+              class="btn btn-primary" type="submit">Detect
+                    Now</button></a>
+        </div></p>
+      </div>
+      <div class="col-sm-4">
+        <img src="/static/3511f3c777cd4be9cbedda5e8005c5ab.png" class="card-img-top rounded mx-auto d-block my-4" alt="#" style="width: 100px; height:100px;">
+        <h4>Coronavirus Detection</h4>
+        <p><div class="form-actions">
+            <a href="{{ url_for('Coronavirus') }}"><button type="submit"
+              class="btn btn-primary" type="submit">Detect
+                    Now</button></a>
+        </div></p>
+      </div>
+    </div>
+   
+    
+  </div>
+
+  
+
+  
+  <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+      
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+    
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+        });
+      });
+    })
+    </script> 
+    
+    
+</body>
+
+</html>
