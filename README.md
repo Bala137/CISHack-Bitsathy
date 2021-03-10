@@ -1,4 +1,4 @@
-# CISHack-Bitsathy - Team Learnovate
+# Smart Disease Prediction with Personal Assistant
 
 # Theme - Health Care
 
